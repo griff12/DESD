@@ -1,6 +1,5 @@
 from speech_recognition import speech_result
 import streamlit as st
-import time
 
 st.title("Online DESD")
 
@@ -27,7 +26,7 @@ if "current_word" not in st.session_state:
     st.session_state.grade_level = 'K'
 
 if st.button("Next Word"):
-
+    
     st.write("Say this word: ")
     st.header(st.session_state.current_word)
 
