@@ -6,16 +6,16 @@ st.title("Online DESD")
 
 if "current_word" not in st.session_state:
     st.session_state.desd_words = {
-                'K': {'baby': False, 'one': False, 'boat': False, 'do': False, 'car': False},
-                '1L': {'was': False, 'daddy': False, 'book': False, 'good': False, 'doll': False},
-                '1U': {'girl': False, 'apple': False, 'they': False, 'story': False, 'some': False},
-                '2': {'above': False, 'what': False, 'any': False, 'busy': False, 'night': False},
-                '3': {'done': False, 'huge': False, 'ocean': False, 'station': False, 'could': False},
-                '4': {'because': False, 'echo': False, 'couple': False, 'eager': False, 'together': False},
-                '5': {'bought': False, 'delicious': False, 'neighbor': False, 'achieve': False, 'region': False},
-                '6': {'malicious': False, 'bureau': False, 'similar': False, 'campaign': False, 'waltz': False},
-                '7-8': {'prairie': False, 'gadget': False, 'facsimile': False, 'emphasize': False, 'prescription': False},
-                '9-12': {'zealous': False, 'clique': False, 'atrocious': False, 'catastrophe': False, 'liquidate': False}
+                'K': {'baby': None, 'one': None, 'boat': None, 'do': None, 'car': None},
+                '1L': {'was': None, 'daddy': None, 'book': None, 'good': None, 'doll': None},
+                '1U': {'girl': None, 'apple': None, 'they': None, 'story': None, 'some': None},
+                '2': {'above': None, 'what': None, 'any': None, 'busy': None, 'night': None},
+                '3': {'done': None, 'huge': None, 'ocean': None, 'station': None, 'could': None},
+                '4': {'because': None, 'echo': None, 'couple': None, 'eager': None, 'together': None},
+                '5': {'bought': None, 'delicious': None, 'neighbor': None, 'achieve': None, 'region': None},
+                '6': {'malicious': None, 'bureau': None, 'similar': None, 'campaign': None, 'waltz': None},
+                '7-8': {'prairie': None, 'gadget': None, 'facsimile': None, 'emphasize': None, 'prescription': None},
+                '9-12': {'zealous': None, 'clique': None, 'atrocious': None, 'catastrophe': None, 'liquidate': None}
             }
     st.session_state.counter = 0
     st.session_state.level_counter = 0
