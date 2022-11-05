@@ -31,9 +31,3 @@ for word in words:
     with open(f'audio_files/{word}.mp3', 'wb') as f:
         f.write(src.content)
     
-
-
-
-
-
-# %%
