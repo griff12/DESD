@@ -1,16 +1,26 @@
-# import streamlit as st
 # from playsound import playsound
 # import time
 import itertools
 
 sounds = {
-    'ʊ': ['oo', 'u', 'o', 'ould'],
+    'ʊ': ['oo', 'u', 'o', 'oul'],
     'ey': ['ai', 'a', 'ay', 'ey', 'ea', 'ei', 'eigh', 'aigh'],
-    'iy': ['ee', 'ea', 'ie', 'ei', 'i', 'y']
+    'iy': ['ee', 'ea', 'ie', 'ei', 'i', 'y'],
+    'ʌ': ['u', 'o', 'ou', 'oe'],
+    'ow': ['o', 'oa', 'ow', 'oe', 'ough', 'ou'],
+    'uw': ['u', 'ui', 'oo', 'ou', 'ue', 'ew', 'o', 'eu', 'oe'],
+    'ɑ': ['o', 'a'],
+    'z': ['z', 'zz', 's'],
+    'æ': ['a'],
+    'k': ['k', 'c', 'ch', 'ck', 'cc'],
+    'l': ['l', 'll']
+    # 'g': ['g', 'gg'],
+    # 'd': ['d', 'dd']
 }
 
 phonetic_desd_words = {
-    'baby': ['b', 'ey', 'b', 'iy']
+    'baby': ['b', 'ey', 'b', 'iy'], 'one': ['w', 'ʌ', 'n'], 'boat': ['b', 'ow', 't'], 'do': ['d', 'uw'], 'car': ['k', 'ɑ', 'r'],
+    'was': ['w', 'ʌ', 'z'], 'daddy': ['d', 'æ', 'd', 'iy'], 'book': ['b', 'ʌ', 'k'], 'good': ['g', 'ʌ', 'd'], 'doll': ['d', 'ɑ', 'l']
 }
 
 def correct(test_word, test_answer):
@@ -48,9 +58,14 @@ def correct(test_word, test_answer):
         print(answer)
     return test_answer in correct_answers
 
+# def run(test_word, test_answer): 
+#     playsound(f'audio_files/{test_word}.mp3')
+#     time.sleep(2)
+#     playsound(f'audio_files/{test_word}.mp3')
+#     return correct(test_word, test_answer)
 
 if __name__ == '__main__':
-    print(correct('baby', 'babee'))
+    print(correct('was', 'wuz'))
 # playsound('audio_files/baby.mp3')
 # time.sleep(2)
 # playsound('audio_files/baby.mp3')
