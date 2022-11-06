@@ -4,12 +4,13 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import requests
 
 # %%
-# do, car, story
+extra_words = [ 'do' , 'car', 'story']
 words = [
-            'baby', 'one', 'boat', 
+            'baby', 'one', 'boat',
             'was', 'daddy', 'book', 'good', 'doll', 
             'girl', 'apple', 'they', 'some',
             'above', 'what', 'any', 'busy', 'night',
@@ -21,7 +22,9 @@ words = [
             'zealous', 'clique', 'atrocious', 'catastrophe', 'liquidate'
         ]
 # %%
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 # %%
 for word in words:
@@ -31,3 +34,10 @@ for word in words:
     with open(f'audio_files/{word}.mp3', 'wb') as f:
         f.write(src.content)
     
+# %%
+for word in extra_words:
+    driver.get(f"https://www.dictionary.com/browse/{word}")
+    audio = WebDriverWait(driver, 12).until(EC.presence_of_element_located((By.XPATH,"//*[@type='audio/mpeg']")))
+    src = requests.get(audio.get_attribute('src'))
+    with open(f'audio_files/{word}.mp3', 'wb') as f:
+        f.write(src.content)
