@@ -5,7 +5,7 @@ import itertools
 sounds = {
     'ʊ': ['oo', 'u', 'o', 'oul'],
     'eɪ': ['ai', 'a', 'ay', 'ey', 'ea', 'ei', 'eigh', 'aigh'],
-    'i': ['ee', 'ea', 'ie', 'ei', 'i', 'y', 'e'],
+    'i': ['ee', 'ea', 'ie', 'ei', 'i', 'y', 'e', 'ey'],
     'ʌ': ['u', 'o', 'ou', 'oe', 'uh'],
     'oʊ': ['o', 'oa', 'ow', 'oe', 'ough', 'ou'],
     'u': ['u', 'ui', 'oo', 'ou', 'ue', 'ew', 'o', 'eu', 'oe'],
@@ -22,7 +22,8 @@ sounds = {
     'l': ['l', 'll', 'le'],
     'z': ['z', 'zz', 's'],
     'p': ['p', 'pe', 'pp'],
-    'r': ['r', 'rr', 're']
+    'r': ['r', 'rr', 're'],
+    'n': ['n', 'nn']
     # 'g': ['g', 'gg'],
     # 'd': ['d', 'dd']
 }
@@ -30,7 +31,7 @@ sounds = {
 phonetic_desd_words = {
     'baby': ['b', 'eɪ', 'b', 'i'], 'one': ['w', 'ʌ', 'n'], 'boat': ['b', 'oʊ', 't'], 'do': ['d', 'u'], 'car': ['k', 'ɑ', 'r'],
     'was': ['w', 'ʌ', 'z'], 'daddy': ['d', 'æ', 'd', 'i'], 'book': ['b', 'ʌ', 'k'], 'good': ['g', 'ʌ', 'd'], 'doll': ['d', 'ɑ', 'l'],
-    'girl': ['g', 'ər', 'l'], 'apple': ['æ', 'p', 'l'], 'they': ['ð', 'eɪ'], 'story': ['s', 't', 'oʊ', 'r', 'i'], 'some': ['s', 'ʌ', 'm'],
+    'girl': ['g', 'ər', 'l'], 'apple': ['æ', 'p', 'ə', 'l'], 'they': ['ð', 'eɪ'], 'story': ['s', 't', 'oʊ', 'r', 'i'], 'some': ['s', 'ʌ', 'm'],
     'above': ['ʌ', 'b', 'ʌ', 'v'], 'what': ['w', 'ʌ', 't'], 'any': ['ɛ', 'n', 'i'], 'busy': ['b', 'ɪ', 'z', 'i'], 'night': ['n', 'ɑɪ', 't'],
     'done': ['d', 'ʌ', 'n'], 'huge': ['h', 'yu', 'dʒ'], 'ocean': None, 'station': None, 'could': None
 }
@@ -80,7 +81,7 @@ def correct(test_word, test_answer):
 #     return correct(test_word, test_answer)
 
 if __name__ == '__main__':
-    print(correct('night', 'huj'))
+    print(correct('any', 'huj'))
 # playsound('audio_files/baby.mp3')
 # time.sleep(2)
 # playsound('audio_files/baby.mp3')
