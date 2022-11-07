@@ -4,15 +4,20 @@ import itertools
 
 sounds = {
     'ʊ': ['oo', 'u', 'o', 'oul'],
-    'ey': ['ai', 'a', 'ay', 'ey', 'ea', 'ei', 'eigh', 'aigh'],
-    'iy': ['ee', 'ea', 'ie', 'ei', 'i', 'y', 'e'],
-    'ʌ': ['u', 'o', 'ou', 'oe'],
-    'ow': ['o', 'oa', 'ow', 'oe', 'ough', 'ou'],
-    'uw': ['u', 'ui', 'oo', 'ou', 'ue', 'ew', 'o', 'eu', 'oe'],
+    'eɪ': ['ai', 'a', 'ay', 'ey', 'ea', 'ei', 'eigh', 'aigh'],
+    'i': ['ee', 'ea', 'ie', 'ei', 'i', 'y', 'e'],
+    'ʌ': ['u', 'o', 'ou', 'oe', 'uh'],
+    'oʊ': ['o', 'oa', 'ow', 'oe', 'ough', 'ou'],
+    'u': ['u', 'ui', 'oo', 'ou', 'ue', 'ew', 'o', 'eu', 'oe'],
     'ɑ': ['o', 'a'],
     'æ': ['a'],
     'ər': ['er', 'ir', 'or', 'ur', 'ure'],
     'ð': ['th', 'the'],
+    'ɛ': ['e'],
+    'ɪ': ['i', 'y'],
+    'ɑɪ': ['i_e', 'y_e', 'igh', 'ie'],
+    'yu': ['u_e', 'ue', 'ew'],
+    'dʒ': ['j'],
     'k': ['k', 'c', 'ch', 'ck', 'cc'],
     'l': ['l', 'll', 'le'],
     'z': ['z', 'zz', 's'],
@@ -23,9 +28,11 @@ sounds = {
 }
 
 phonetic_desd_words = {
-    'baby': ['b', 'ey', 'b', 'iy'], 'one': ['w', 'ʌ', 'n'], 'boat': ['b', 'ow', 't'], 'do': ['d', 'uw'], 'car': ['k', 'ɑ', 'r'],
-    'was': ['w', 'ʌ', 'z'], 'daddy': ['d', 'æ', 'd', 'iy'], 'book': ['b', 'ʌ', 'k'], 'good': ['g', 'ʌ', 'd'], 'doll': ['d', 'ɑ', 'l'],
-    'girl': ['g', 'ər', 'l'], 'apple': ['æ', 'p', 'l'], 'they': ['ð', 'ey'], 'story': ['s', 't', 'ow', 'r', 'iy'], 'some': ['s', 'ʌ', 'm']
+    'baby': ['b', 'eɪ', 'b', 'i'], 'one': ['w', 'ʌ', 'n'], 'boat': ['b', 'oʊ', 't'], 'do': ['d', 'u'], 'car': ['k', 'ɑ', 'r'],
+    'was': ['w', 'ʌ', 'z'], 'daddy': ['d', 'æ', 'd', 'i'], 'book': ['b', 'ʌ', 'k'], 'good': ['g', 'ʌ', 'd'], 'doll': ['d', 'ɑ', 'l'],
+    'girl': ['g', 'ər', 'l'], 'apple': ['æ', 'p', 'l'], 'they': ['ð', 'eɪ'], 'story': ['s', 't', 'oʊ', 'r', 'i'], 'some': ['s', 'ʌ', 'm'],
+    'above': ['ʌ', 'b', 'ʌ', 'v'], 'what': ['w', 'ʌ', 't'], 'any': ['ɛ', 'n', 'i'], 'busy': ['b', 'ɪ', 'z', 'i'], 'night': ['n', 'ɑɪ', 't'],
+    'done': ['d', 'ʌ', 'n'], 'huge': ['h', 'yu', 'dʒ'], 'ocean': None, 'station': None, 'could': None
 }
 
 def correct(test_word, test_answer):
@@ -59,8 +66,11 @@ def correct(test_word, test_answer):
                 answer = answer + sound
             else:
                 answer = answer + combo[int(sound)]
+        if '_e' in answer:
+            answer = answer.replace('_e', '') + 'e'
+            correct_answers.append(answer[:-1])
         correct_answers.append(answer)
-        print(answer)
+    print(correct_answers)
     return test_answer in correct_answers
 
 # def run(test_word, test_answer): 
@@ -70,7 +80,7 @@ def correct(test_word, test_answer):
 #     return correct(test_word, test_answer)
 
 if __name__ == '__main__':
-    print(correct('story', 'storre'))
+    print(correct('night', 'huj'))
 # playsound('audio_files/baby.mp3')
 # time.sleep(2)
 # playsound('audio_files/baby.mp3')
