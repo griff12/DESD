@@ -11,7 +11,7 @@ sounds = {
     'ɑ': ['o', 'a'],
     'yu': ['u_e', 'ue', 'ew'],
     'ʌ': ['u', 'uh'],
-    'ʊ': ['oo', 'u', 'ou'],
+    'ʊ': ['oo', 'u', 'ou', 'oul'],
     'u': ['u', 'ui', 'oo', 'ou', 'ue', 'ew', 'eu'],
     'ər': ['r', 'er', 'ir', 'or', 'ur', 'ure'],
     'ð': ['th', 'the'],
@@ -21,10 +21,11 @@ sounds = {
     'dʒ': ['j'],
     'ʃ': ['sh', 'ch', 'ti', 'ss', 's'],
     'tʃ' : ['ch'],
-    'y': ['y', 'i'],
-    'w': ['w', 'wh', 'u'],
-    # '*y': ['#'],
     'k': ['k', 'c', 'ck'],
+    'w': ['w', 'wh', 'u'],
+    'x': ['x', 'xs', 'cs', 'ks', 'cks'],
+    'y': ['y', 'i'],
+    # '*y': ['#'],
     'z': ['z', 's'],
 }
 
@@ -37,7 +38,7 @@ phonetic_desd_words = {
     'because': [['b','ɪ','k','ʌ','z'],['b','ʌ','k','ʌ','z']], 'echo': [['ɛ','k','oʊ']], 'couple': [['k','ʌ','p','*ə','l']], 'eager': [['i','g','ər']], 'together': [['t','ə','g','ɛ','ð','ər']],
     'bought': [['b','ɔ','t']], 'delicious': [['d','ɪ','l','ɪ','ʃ','ə','s']], 'neighbor': [['n','eɪ','b','ər']], 'achieve': [['ə','tʃ','i','v']], 'region': [['r','i','dʒ','ə','n']],
     'malicious': [['m','ə','l','ɪ','ʃ','ə','s']], 'bureau': [['b','y','ʊ','ər','oʊ']], 'similar': [['s','ɪ','m','ə','l','ər']], 'campaign': [['k','æ','m','p','eɪ','n']], 'waltz': [['w','ɔ','l','t','s']],
-    'prairie': [['p','r','ɛ','ər','i' ], ['p','r','eɪ','ər','i']], 'gadget': [['g','æ','dʒ','ɪ','t']], 'facsimile': [['f','æ','k','s','ɪ','m','ə','l','i']], 'emphasize': [['ɛ','m','f','ə','s','ɑɪ','z']], 'prescription': [['p','r','ɪ','s','k','r','ɪ','p','ʃ','ə','n']],
+    'prairie': [['p','r','ɛ','ər','i' ], ['p','r','eɪ','ər','i']], 'gadget': [['g','æ','dʒ','ɪ','t']], 'facsimile': [['f','æ','k','s','ɪ','m','ə','l','i'], ['f','æ','x','ɪ','m','ə','l','i']], 'emphasize': [['ɛ','m','f','ə','s','ɑɪ','z']], 'prescription': [['p','r','ɪ','s','k','r','ɪ','p','ʃ','ə','n']],
     'zealous': [['z','ɛ','l','ə','s']], 'clique': [['k','l','i','k']], 'atrocious': [['ə','t','r','oʊ','ʃ','ə','s']], 'catastrophe': [['k','ə','t','æ','s','t','r','ə','f','i']], 'liquidate': [['l','ɪ','k','w','ɪ','d','eɪ','t']]
 }
 
@@ -85,7 +86,7 @@ def correct(test_word, test_answer):
     return test_answer in correct_answers
 
 if __name__ == '__main__':
-    print(correct('liquidate', 'lickwidate'))
+    print(correct('malicious', 'lickwidate'))
 # playsound('audio_files/baby.mp3')
 # time.sleep(2)
 # playsound('audio_files/baby.mp3')
