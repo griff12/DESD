@@ -8,7 +8,7 @@ sounds = {
     'ɑɪ': ['i_e', 'y_e', 'igh', 'ie'],
     'ɪ': ['i', 'y', 'e', 'ih'],
     'oʊ': ['o_e', 'o', 'oa', 'ow', 'oe', 'ough', 'ou', 'oh'],
-    'ɑ': ['o', 'a'],
+    'ɑ': ['o', 'a', 'ah'],
     'yu': ['u_e', 'ue', 'ew'],
     'ʌ': ['u', 'uh'],
     'ʊ': ['oo', 'u', 'ou'],
@@ -30,7 +30,7 @@ sounds = {
 
 phonetic_desd_words = {
     'baby': [['b','eɪ','b','i']], 'one': [['w','ʌ','n']], 'boat': [['b','oʊ','t']], 'do': [['d','u']], 'car': [['k','ɑ','r']],
-    'was': [['w','ʌ','z']], 'daddy': [['d','æ','d','i']], 'book': [['b','ʌ','k']], 'good': [['g','ʌ','d']], 'doll': [['d','ɑ','l']],
+    'was': [['w','ʌ','z']], 'daddy': [['d','æ','d','i']], 'book': [['b','ʌ','k']], 'good': [['g','ʌ','d']], 'doll': [['d','ɑ','l'], ['d','ɑ','l', 'l']],
     'girl': [['g','ər','l']], 'apple': [['æ','p','ə','l'], ['æ','p','l']], 'they': [['ð','eɪ']], 'story': [['s','t','oʊ','r','i']], 'some': [['s','ʌ','m']],
     'above':[['ʌ','b','ʌ','v']], 'what': [['w','ʌ','t']], 'any': [['ɛ','n','i']], 'busy': [['b','ɪ','z','i']], 'night': [['n','ɑɪ','t']],
     'done': [['d','ʌ','n']], 'huge': [['h','yu','dʒ']], 'ocean': [['oʊ','ʃ','ə','n']], 'station': [['s','t','eɪ','ʃ','ə','n']], 'could': [['k','ʊ','d']],
@@ -86,6 +86,3 @@ def correct(test_word, test_answer):
 
 if __name__ == '__main__':
     print(correct('liquidate', 'lickwidate'))
-# playsound('audio_files/baby.mp3')
-# time.sleep(2)
-# playsound('audio_files/baby.mp3')

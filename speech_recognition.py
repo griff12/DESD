@@ -92,6 +92,9 @@ async def send_receive():
 					break
 					
 		send_result, receive_result = await asyncio.gather(send(), receive(), return_exceptions=True)
+		print()
+		print(receive_result)
+		print()
 		return receive_result
 
 def speech_result() -> str:
