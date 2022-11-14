@@ -5,6 +5,8 @@ import json
 from configure import auth_key
 import pyaudio
 
+common_errors = {'dull': 'doll', 'dahl': 'doll', 'but': 'bought', 'vaccinely': 'facsimile', 'factsimile': 'facsimile'}
+
 FRAMES_PER_BUFFER = 3200
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
@@ -92,11 +94,17 @@ async def send_receive():
 					break
 					
 		send_result, receive_result = await asyncio.gather(send(), receive(), return_exceptions=True)
-		print()
-		print(receive_result)
-		print()
+		r = await _ws.send(json.dumps({'terminate_session': 'true'}))
 		return receive_result
 
 def speech_result() -> str:
-	return asyncio.run(send_receive())
-	
+	result = asyncio.run(send_receive())
+	if result in common_errors:
+		result = common_errors[result]
+	print()
+	print(result)
+	print()
+	return result
+
+if __name__ == '__main__':
+	speech_result()
