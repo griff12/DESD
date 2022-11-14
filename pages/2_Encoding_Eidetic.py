@@ -3,7 +3,6 @@ import numpy as np
 from streamlit_extras.switch_page_button import switch_page
 
 st.title('Type the word you hear spoken exactly how it should be spelled')
-st.session_state.grade_level = '3'
 
 if 'eidetic_words' not in st.session_state:
     correct_words = {}

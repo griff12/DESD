@@ -30,7 +30,7 @@ if "current_word" not in st.session_state:
 if st.button("Next Word"):
     
     st.write("Say this word: ")
-    time.sleep(0.5)
+    time.sleep(0.75)
     st.header(st.session_state.current_word)
 
     current_level = list(st.session_state.desd_words)[st.session_state.counter]
