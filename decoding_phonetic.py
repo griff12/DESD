@@ -10,7 +10,7 @@ sounds = {
     'oʊ': ['o_e', 'o', 'oa', 'ow', 'oe', 'ough', 'ou', 'oh'],
     'ɑ': ['o', 'a', 'ah'],
     'yu': ['u_e', 'ue', 'ew'],
-    'ʌ': ['u', 'uh'],
+    'ʌ': ['u', 'uh', 'a'],
     'ʊ': ['oo', 'u', 'ou', 'oul'],
     'u': ['u', 'ui', 'oo', 'ou', 'ue', 'ew', 'eu'],
     'ər': ['r', 'er', 'ir', 'or', 'ur', 'ure'],
