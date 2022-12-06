@@ -1,6 +1,7 @@
 name: desd
 channels:
   - defaults
+  - conda-forge
 dependencies:
   - pyaudio
   - python
