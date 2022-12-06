@@ -1,16 +1,16 @@
 name: desd
 channels:
-  - defaults
   - conda-forge
+  - defaults
 dependencies:
-  - pyaudio
-  - python
-  - ca-certificates
-  - certifi
-  - websockets
-  - streamlit
-  - openssl
-  - webdriver-manager
-  - selenium
-  - bokeh
+  - pyaudio=0.2.11
+  - python=3.10.6
+  - ca-certificates=2022.9.24
+  - certifi=2022.9.24
+  - websockets=10.3
+  - streamlit=1.13.0
+  - openssl=1.1.1s
+  - webdriver-manager=3.8.4
+  - selenium=4.5.0
+  - bokeh=2.4.3
 
