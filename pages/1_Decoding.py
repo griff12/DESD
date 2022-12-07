@@ -1,8 +1,19 @@
-from speech_recognition import speech_result
+# from speech_recognition import speech_result
 import streamlit as st
 import time
 from streamlit_extras.switch_page_button import switch_page
+import os
+import streamlit.components.v1 as components
 
+def speech_result():
+    parent_dir = os.path.dirname(os.path.abspath(__file__))
+    build_dir = os.path.join(parent_dir, "st_audiorec/frontend/build")
+    st_audiorec = components.declare_component("st_audiorec", path=build_dir)
+    val = st_audiorec()
+    if isinstance(val, dict):  # retrieve audio data
+        st.write(val)
+    
+    
 st.title("Online DESD")
 
 if "current_word" not in st.session_state:
@@ -26,6 +37,7 @@ if "current_word" not in st.session_state:
     st.session_state.total_wrong = 0
     st.session_state.level_correct = 0
     st.session_state.grade_level = 'K'
+    
 
 if st.button("Next Word"):
     

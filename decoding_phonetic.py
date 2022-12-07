@@ -85,5 +85,5 @@ def correct(test_word, test_answer):
     print(correct_answers)
     return test_answer in correct_answers
 
-if __name__ == '__main__':
-    print(correct('malicious', 'lickwidate'))
+# if __name__ == '__main__':
+#     print(correct('malicious', 'lickwidate'))
